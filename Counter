@@ -1,0 +1,18 @@
+//Counting the number of values and percentages in python list and displaying the values which are more than 5%
+
+customers=["Bigcorp","Bigcorp","Acme","Bigcorp","Zork","Zork","abc","Bigcorp","Acme","Bigcorp","Bigcorp","Zork","Bigcorp",
+"Zork","Zork","Bigcorp","Acme","Bigcorp","Acme","Bigcorp","Acme","Littlecorp","nadircorp"]
+d = {}
+result=[]
+for customer in customers:
+    d[customer] = d.get(customer, 0) + 1
+for key,value in d.items():
+    if(value/sum(d.values())*100)>5:
+        print(key)
+        
+//Alternate ways 
+
+cnt = Counter(customers)
+for key,value in cnt.items():
+    if(value/len(customers)*100>5):
+        print(key)
